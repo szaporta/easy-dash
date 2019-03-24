@@ -4,6 +4,7 @@ def get_original_dashboard(api_key, app_key, dashboard_id):
 
     options = { 'api_key': api_key, 'app_key': app_key }
     initialize(**options)
+    
     og_dash = api.Dashboard.get(dashboard_id)
     
     return og_dash
@@ -22,6 +23,7 @@ def create_new_dashboard(api_key, app_key, dashboard_template):
     template_variables = dashboard_template['template_variables']
 
     api.Dashboard.create(
+        
         title=title,
         widgets=widgets,
         layout_type=layout_type,
@@ -29,6 +31,7 @@ def create_new_dashboard(api_key, app_key, dashboard_template):
         is_read_only=is_read_only,
         notify_list=notify_list,
         template_variables=template_variables
+        
         )
     
 
